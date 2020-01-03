@@ -1,3 +1,4 @@
+package com.kiran.nse;
 /**
  * Created by kiranya on 25/4/18.
  */
@@ -13,10 +14,10 @@ public class nseanalytics {
     private static final DecimalFormat df = new DecimalFormat("##.##");
 
     // IP address of the DB host is hardcoded to avoid using Ative DB..
-    private static String dbHostIP = "localhost";
+    private static String dbHostIP = "nsedb";
     private static String dbName = "eqnse";
     private static String dbUserName = "nseuser";
-    private static String dbPwd = "INSERT_PWD";
+    private static String dbPwd = "changeit";
     private static String startDate = "INSERT_PWD";
     private static String endDate = "INSERT_PWD";
 

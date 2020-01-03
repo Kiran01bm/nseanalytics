@@ -1,0 +1,40 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  nseapp:
+    image: nseapp:v1
+    build: ./app
+    container_name: nseapp
+    links:
+      - nsedb
+    depends_on:
+      - nsedb
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 500M
+        reservations:
+          cpus: '0.25'
+          memory: 50M
+
+  nsedb:
+    image: nsedb:v1
+    build: ./database
+    ports:
+      - "5432:5432"
+    container_name: nsedb
+    environment:
+      POSTGRES_PASSWORD: mypassword
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 500M
+        reservations:
+          cpus: '0.25'
+          memory: 50M
+    restart: always
+
