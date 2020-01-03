@@ -20,5 +20,5 @@ psql -v ON_ERROR_STOP=1 --username "nseuser" --dbname "nsedb" <<-EOSQL
     CREATE TABLE eqnse ( SYMBOL character varying (150), SERIES	character varying (15), OPEN decimal, HIGH decimal, LOW decimal, CLOSE decimal, LAST decimal, PREVCLOSE decimal, TOTTRDQTY decimal, TOTTRDVAL decimal, MKTDATE date, TOTALTRADES decimal, ISIN character varying (40), CONSTRAINT ISIN_DATE PRIMARY KEY(MKTDATE,SERIES,ISIN) );
     CREATE TABLE priceslope (EQNAME character varying (300),SLOPE decimal);  		
     CREATE TABLE volumeslope (EQNAME character varying (300),SLOPE decimal);
-    \copy eqnse FROM '/tmp/consolidated.csv' DELIMITER ',' CSV
+    \copy eqnse FROM '/tmp/nsedata/consolidated.csv' DELIMITER ',' CSV
 EOSQL

@@ -46,7 +46,7 @@ public class nseanalytics {
                 .getConnection(connectionString, dbUserName , dbPwd);
 
         // Get unique records
-        String getUniqueScrips = "select distinct ISIN, SERIES, SYMBOL, MKTDATE from "+ dbName + " where MKTDATE BETWEEN '" + startDate + "' and '" + endDate +"' order by ISIN, SERIES;";
+        String getUniqueScrips = "select distinct ISIN, SERIES, SYMBOL, MKTDATE from "+ dbName + " where SERIES='EQ' and  MKTDATE BETWEEN '" + startDate + "' and '" + endDate +"' order by ISIN, SERIES;";
         Statement stmt_getUniqueScrips = con.createStatement();
         ResultSet rs_stmt_getUniqueScrips;
 

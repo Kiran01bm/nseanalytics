@@ -3,6 +3,7 @@ version: '3.1'
 
 services:
 
+
   nseapp:
     image: nseapp:v1
     build: ./app
@@ -23,6 +24,7 @@ services:
           cpus: '0.25'
           memory: 50M
 
+
   nsedb:
     image: nsedb:v1
     build: ./database
@@ -40,4 +42,3 @@ services:
           cpus: '0.25'
           memory: 50M
     restart: always
-
