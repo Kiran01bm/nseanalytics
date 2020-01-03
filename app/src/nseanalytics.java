@@ -37,6 +37,7 @@ public class nseanalytics {
         startDate = args[1];
         endDate = args[2];
 
+        System.out.println("Analysis started: Start Date: " + startDate + " End Date: "+ endDate);
         // DB Conn string
         String connectionString = "jdbc:postgresql://" + dbHostIP + ":5432/nsedb";
 

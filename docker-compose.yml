@@ -7,6 +7,9 @@ services:
     image: nseapp:v1
     build: ./app
     container_name: nseapp
+    environment:
+      STARTDATE: 01-Dec-2019
+      ENDDATE: 31-Dec-2019
     links:
       - nsedb
     depends_on:
