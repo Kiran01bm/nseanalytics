@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# The PostgreSQL image sets up trust authentication locally so password is not required when connecting from localhost (inside the same container). However, a password will be required if connecting from a different host/container.
+# The connections below are  without a password due to the presence of trust authentication for Unix socket connections made inside the container.
+
 set -e
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
